@@ -1,0 +1,5 @@
+{
+  "name": "Stickman Maze War",
+  "description": "A puzzle game where you control a stickman thief to escape mazes while avoiding police. Features progressive difficulty, skins, and mobile-friendly controls.",
+  "requestFramePermissions": []
+}
