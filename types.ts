@@ -1,3 +1,4 @@
+
 export type Position = {
   x: number;
   y: number;
@@ -36,6 +37,7 @@ export interface Enemy {
   behavior: EnemyBehavior;
   direction: Direction; // Current moving direction for PATROL
   speedTick: number; // Movement speed multiplier
+  stunnedUntil?: number; // Timestamp when stun ends
 }
 
 export interface Skin {
@@ -51,4 +53,32 @@ export interface LevelConfig {
   enemyCount: number;
   enemyBehavior: EnemyBehavior;
   enemySpeed: number; // ms per move (lower is faster)
+}
+
+// --- New Item Types ---
+
+export enum ItemType {
+  NONE = 'NONE',
+  DOOR = 'DOOR',       // Anywhere Door
+  SHURIKEN = 'SHURIKEN', // Ninja Star
+}
+
+export interface Flower {
+  id: number;
+  position: Position;
+}
+
+export interface Portal {
+  id: string;
+  posA: Position;
+  posB: Position;
+  createdAt: number;
+  expiresAt: number;
+}
+
+export interface Projectile {
+  id: number;
+  position: Position;
+  direction: Direction;
+  active: boolean;
 }
